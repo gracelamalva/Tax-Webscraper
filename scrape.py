@@ -12,8 +12,6 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
     }
 
-#url = "https://apps.irs.gov/app/picklist/list/priorFormPublication.html"
-#req = requests.get(url,headers)
 pages = np.arange(1,20236,200)
 
 for page in pages: 
@@ -22,7 +20,6 @@ for page in pages:
     #req = requests.get(page.text,headers)
     soup = BeautifulSoup(page.text,'html.parser')
                         #req.content
-
 
     table = soup.find('table', class_ = 'picklist-dataTable')
     rows = table.find_all('tr')
@@ -35,6 +32,7 @@ for page in pages:
         title = row.find('td', class_="MiddleCellSpacer").text.strip()
         year_avl = soup.find('td', class_= "EndCellSpacer").text.strip()
         print(f'Product Number: {product_no} Title: {title} Years Available: {year_avl}')
+
         if (search_query == product_no ):
 
             result = [

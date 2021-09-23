@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import numpy as np
 
-
 headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET',
@@ -33,16 +32,12 @@ for page in pages:
     soup = BeautifulSoup(page.text,'html.parser')
                         #req.content
 
-
     table = soup.find('table', class_ = 'picklist-dataTable')
     rows = table.find_all('tr')
-
-    
 
     links = table.find_all('a')
 
     i = 0
-   
 
     for row in rows[1:]:
         product_no = row.find('a').text
@@ -53,8 +48,6 @@ for page in pages:
         #print(f'Product Number: {product_no} Title: {title} Years Available: {year_avl}')
         if (tax_form == product_no and year_avl in str(year_range)):
             print (f'FOUND!!!!! Product Number: {product_no} Title: {title} Years Available: {year_avl}')
-            #print(row.find('a'))
-            #if '.pdf' in row.get('href', []):
                 
             i+=1 
             print("Downloading File: ", i )
@@ -68,12 +61,3 @@ for page in pages:
 
 print("All pdfs downloaded")
 
-
-        
-            
-
-            
-
-            
-        
-           
