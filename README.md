@@ -7,8 +7,11 @@
 1. Find desired item by searching through the whole website of 20,000+ items
 2. Download desired PDF within selected range of years 
 
+**Run** 
+`requirements.txt`
+
 **Requirements:**
-- Python 3.8
+- Python 3.8 
 - pip installer
 
 **Package Requirements**
