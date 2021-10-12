@@ -1,5 +1,3 @@
-
-
 URL =  "https://apps.irs.gov/app/picklist/list/priorFormPublication.html"
 HEADERS = {
     'Access-Control-Allow-Origin': '*',
