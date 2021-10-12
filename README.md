@@ -14,10 +14,7 @@
 - Python 3.8 
 - pip installer
 
-**Package Requirements**
-- `pip install numpy`
-- `pip install beautifulsoup4 `
 
-Open folder containing script in terminal and run:
-python3 scrape.py
-python3 download_pdf.py
+In terminal run `python3 run.py [function]` 
+1. python3 run.py scrape 
+2. python3 run.py download 
